@@ -1,6 +1,6 @@
 actor {
 
-  var counter : Nat = 0;
+  stable var counter : Nat = 0;
 
   public func inc() : async Nat {
     counter += 1;
@@ -8,6 +8,11 @@ actor {
   };
 
   public query func getCount() : async Nat {
+    return counter;
+  };
+
+public func dec() : async Nat {
+    counter -= 1;
     return counter;
   };
 
